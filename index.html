@@ -201,7 +201,7 @@
       <!-- Eyebrow -->
       <div class="fade-up flex items-center gap-4 mb-8">
         <span class="h-px w-8 bg-[#1E5BD6]"></span>
-        <p class="text-[11px] tracking-[.26em] text-white/50" style="font-family:'Inter',sans-serif;">SYSTEM ENGINEERING · CLOUD NATIVE</p>
+        <p class="text-[11px] tracking-[.26em] text-white/50" style="font-family:'Inter',sans-serif;">SYSTEM ENGINEERING · CLOUD NATIVE · SAP BTP</p>
       </div>
 
       <!-- Main headline -->
@@ -307,7 +307,7 @@
           <h2 class="text-xl lg:text-2xl font-bold text-[#0A1C3B] mt-1">東森の強み</h2>
         </div>
       </div>
-      <div class="grid lg:grid-cols-3 gap-5 mt-8" id="strengthGrid"></div>
+      <div class="grid md:grid-cols-2 gap-5 mt-8" id="strengthGrid"></div>
     </div>
   </section>
 
@@ -706,10 +706,10 @@
   var CAPS = [
     ['01','設計から運用まで一貫対応'],
     ['02','非機能要件に強みを持つ'],
-    ['03','マルチクラウド実績'],
+    ['03','SAP BTP 専門チーム'],
     ['04','DX 推進支援']
   ];
-  var TICKER = ['AZURE','AWS','MICROSOFT 365','KUBERNETES','SAP','DEVOPS','SSO · IDP','CLOUD NATIVE','ZERO TRUST','SRE'];
+  var TICKER = ['AZURE','AWS','MICROSOFT 365','KUBERNETES','SAP BTP','S/4HANA','DEVOPS','SSO · IDP','CLOUD NATIVE','ZERO TRUST','SRE','CAP FRAMEWORK'];
   var SERVICES = [
     { title:'クラウドネイティブなシステム設計', en:'CLOUD NATIVE',
       desc:'IaaS / PaaS / SaaS を組み合わせたモダンな情報基盤。サーバレスや DevOps、ゼロトラストを前提に設計します。',
@@ -726,11 +726,16 @@
     { title:'オンプレミス環境の構築と保守', en:'ON-PREMISE',
       desc:'クラウド全盛の時代にも欠かせないオンプレミス基盤。設計・構築から監視・運用保守まで一貫して対応します。',
       tags:['サーバ構築','仮想化基盤','監視 / 運用','DR / BCP','セキュリティ','非機能要件'],
-      long:'クラウドへ寄せない選択も選択肢のひとつ。データ保護要件や性能要件、コストなどから最適解を見極め、オンプレ／クラウドのハイブリッド構成を設計します。'}
+      long:'クラウドへ寄せない選択も選択肢のひとつ。データ保護要件や性能要件、コストなどから最適解を見極め、オンプレ／クラウドのハイブリッド構成を設計します。'},
+    { title:'SAP / BTP の導入・活用支援', en:'SAP · BTP',
+      desc:'S/4HANA を軸に SAP BTP（Business Technology Platform）を活用した業務プロセスの拡張・統合・モダナイズを支援します。',
+      tags:['SAP BTP','S/4HANA','CAP / CAPM','Integration Suite','SAP Build Apps','ABAP / RAP'],
+      long:'SAP BTP は、SAP エコシステム全体の拡張・統合・自動化を担うクラウドプラットフォームです。当社は BTP を軸とした設計・構築・運用を一貫して支援。Integration Suite によるシステム連携、CAP フレームワークでの拡張開発、SAP Build を活用したローコード開発など、SAP 投資の最大化を実現します。'}
   ];
   var STRENGTHS = [
     { title:'非機能要件に強い設計力', desc:'セキュリティ・可用性・性能・運用性といった "効いてくる" 非機能要件を起点に、長期運用に耐えうる情報基盤を設計します。' },
-    { title:'マルチクラウドと Microsoft の実装力', desc:'Azure を中心に AWS / GCP、Kubernetes、Microsoft 365 を組み合わせ、ベンダーロックインに縛られない最適な構成を選択します。' },
+    { title:'SAP BTP の専門設計力', desc:'SAP BTP を中核に、Integration Suite・CAP フレームワーク・SAP Build を組み合わせた拡張・統合設計を得意とします。S/4HANA との深い連携実績が強みです。' },
+    { title:'マルチクラウド・Microsoft・SAP の実装力', desc:'Azure / AWS / GCP、Microsoft 365、SAP BTP を横断的に組み合わせ、ベンダーロックインに縛られない最適な構成を設計します。' },
     { title:'設計から運用までの一貫体制', desc:'設計・構築で終わらず、モニタリング、運用、改善までを同じチームで担当。「作って終わり」にしない伴走型のスタイルが特徴です。' }
   ];
   var NEWS = [
@@ -748,14 +753,15 @@
     ['COMPANY','東森テクノロジー株式会社（Tomori Technology Co., Ltd.）'],
     ['ESTABLISHED','2022年2月18日'],
     ['ADDRESS','〒105-0021 東京都港区東新橋2丁目6番3号 昭栄ビル5階'],
-    ['BUSINESS','システムエンジニアリングサービス（設計 / 構築 / 運用保守）／ クラウドネイティブ・コンテナ基盤設計 / Microsoft ソリューション / オンプレミス基盤構築 / DX 推進支援'],
-    ['TECHNOLOGY','Microsoft Azure / AWS / Google Cloud / Kubernetes / Microsoft 365 / Active Directory / SSO / RPA / DevOps'],
+    ['BUSINESS','システムエンジニアリングサービス（設計 / 構築 / 運用保守）／ クラウドネイティブ・コンテナ基盤設計 / Microsoft ソリューション / SAP BTP 導入・活用支援 / オンプレミス基盤構築 / DX 推進支援'],
+    ['TECHNOLOGY','Microsoft Azure / AWS / Google Cloud / Kubernetes / SAP BTP / S/4HANA / CAP Framework / Integration Suite / Microsoft 365 / Active Directory / SSO / RPA / DevOps'],
     ['CORPORATE NO.','8020001145306']
   ];
   var POSITIONS = [
     { title:'クラウドインフラエンジニア', desc:'Azure / AWS を中心としたクラウドインフラの設計・構築・運用をお任せします。', skills:['AZURE','AWS','TERRAFORM','KUBERNETES','CI / CD'] },
     { title:'Microsoft ソリューションコンサルタント', desc:'Microsoft 365 / Entra / Power Platform の導入提案・設計・展開を担当します。', skills:['M365','ENTRA ID','POWER PLATFORM','RPA'] },
     { title:'SRE / 運用エンジニア', desc:'クラウドネイティブなシステムの運用設計・改善・オンコール対応をお任せします。', skills:['SRE','OBSERVABILITY','INCIDENT MGMT','LINUX'] },
+    { title:'SAP BTP エンジニア', desc:'SAP BTP を活用した拡張開発・システム統合・移行支援をお任せします。S/4HANA や CAP の経験を活かせる環境です。', skills:['SAP BTP','CAP / CAPM','S/4HANA','INTEGRATION SUITE','ABAP'] },
     { title:'プロジェクトマネージャー', desc:'複数プロジェクトの推進・お客様折衝・チームビルディングを担っていただきます。', skills:['PMO','STAKEHOLDER','AGILE','CLOUD'] }
   ];
   var BENEFITS = [

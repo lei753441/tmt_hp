@@ -52,6 +52,13 @@ export const SERVICES = [
       "クラウド全盛の時代にも欠かせないオンプレミス基盤。設計・構築から監視・運用保守まで一貫して対応します。",
     tags: ["サーバ構築", "仮想化基盤", "監視 / 運用", "DR / BCP", "セキュリティ", "非機能要件"],
   },
+  {
+    title: "SAP / BTP の導入・活用支援",
+    en: "SAP · BTP",
+    desc:
+      "S/4HANA を軸に SAP BTP（Business Technology Platform）を活用した業務プロセスの拡張・統合・モダナイズを支援します。",
+    tags: ["SAP BTP", "S/4HANA", "CAP / CAPM", "Integration Suite", "SAP Build Apps", "ABAP / RAP"],
+  },
 ];
 
 export const SERVICES_DETAIL = SERVICES.map((s) => ({
@@ -72,9 +79,14 @@ export const STRENGTHS = [
       'セキュリティ・可用性・性能・運用性といった "効いてくる" 非機能要件を起点に、長期運用に耐えうる情報基盤を設計します。',
   },
   {
-    title: "マルチクラウドと Microsoft の実装力",
+    title: "SAP BTP の専門設計力",
     desc:
-      "Azure を中心に AWS / GCP、Kubernetes、Microsoft 365 を組み合わせ、ベンダーロックインに縛られない最適な構成を選択します。",
+      "SAP BTP を中核に、Integration Suite・CAP フレームワーク・SAP Build を組み合わせた拡張・統合設計を得意とします。S/4HANA との深い連携実績が強みです。",
+  },
+  {
+    title: "マルチクラウド・Microsoft・SAP の実装力",
+    desc:
+      "Azure / AWS / GCP、Microsoft 365、SAP BTP を横断的に組み合わせ、ベンダーロックインに縛られない最適な構成を設計します。",
   },
   {
     title: "設計から運用までの一貫体制",
@@ -101,11 +113,11 @@ export const OVERVIEW = [
   ["ADDRESS", "〒105-0021 東京都港区東新橋2丁目6番3号 昭栄ビル5階"],
   [
     "BUSINESS",
-    "システムエンジニアリングサービス（設計 / 構築 / 運用保守）／ クラウドネイティブ・コンテナ基盤設計 / Microsoft ソリューション / オンプレミス基盤構築 / DX 推進支援",
+    "システムエンジニアリングサービス（設計 / 構築 / 運用保守）／ クラウドネイティブ・コンテナ基盤設計 / Microsoft ソリューション / SAP BTP 導入・活用支援 / オンプレミス基盤構築 / DX 推進支援",
   ],
   [
     "TECHNOLOGY",
-    "Microsoft Azure / AWS / Google Cloud / Kubernetes / Microsoft 365 / Active Directory / SSO / RPA / DevOps",
+    "Microsoft Azure / AWS / Google Cloud / Kubernetes / SAP BTP / S/4HANA / CAP Framework / Integration Suite / Microsoft 365 / Active Directory / SSO / RPA / DevOps",
   ],
   ["CORPORATE NO.", "8020001145306"],
 ];
@@ -125,6 +137,11 @@ export const POSITIONS = [
     title: "SRE / 運用エンジニア",
     desc: "クラウドネイティブなシステムの運用設計・改善・オンコール対応をお任せします。",
     skills: ["SRE", "OBSERVABILITY", "INCIDENT MGMT", "LINUX"],
+  },
+  {
+    title: "SAP BTP エンジニア",
+    desc: "SAP BTP を活用した拡張開発・システム統合・移行支援をお任せします。S/4HANA や CAP の経験を活かせる環境です。",
+    skills: ["SAP BTP", "CAP / CAPM", "S/4HANA", "INTEGRATION SUITE", "ABAP"],
   },
   {
     title: "プロジェクトマネージャー",
