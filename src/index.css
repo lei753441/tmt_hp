@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { scroll-behavior: smooth; }
+body {
+  font-family: "Noto Sans JP", "Inter", system-ui, sans-serif;
+  color: #111827;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.en { font-family: "Cormorant Garamond", "Noto Serif JP", serif; letter-spacing: .08em; }
+.mono-num { font-family: "Inter", sans-serif; font-variant-numeric: tabular-nums; }
+
+.hero-bg {
+  background:
+    radial-gradient(ellipse 1600px 900px at 90% -10%, rgba(30,91,214,.30), transparent 60%),
+    radial-gradient(ellipse 900px 600px at -8% 115%, rgba(183,167,122,.13), transparent 58%),
+    radial-gradient(ellipse 500px 350px at 38% 52%, rgba(30,91,214,.08), transparent 55%),
+    linear-gradient(160deg, #030b18 0%, #0c2244 46%, #091a36 100%);
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.glass {
+  background: rgba(255,255,255,.065);
+  border: 1px solid rgba(255,255,255,.11);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.link-underline { position: relative; }
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s cubic-bezier(.25,.8,.25,1);
+}
+.link-underline:hover::after { transform: scaleX(1); }
+
+.section-num { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .32em; color: #1E5BD6; }
+.hairline { height: 1px; background: #E5E7EB; }
+
+.btn-primary {
+  background: #0A1C3B; color: #fff; padding: 13px 30px;
+  display: inline-flex; align-items: center; gap: 14px;
+  font-weight: 500; font-size: 14px; letter-spacing: .03em;
+  transition: transform .3s cubic-bezier(.25,.8,.25,1);
+  position: relative; overflow: hidden;
+}
+.btn-primary::before {
+  content: ""; position: absolute; inset: 0;
+  background: #1E5BD6;
+  transform: translateX(-101%);
+  transition: transform .32s cubic-bezier(.25,.8,.25,1);
+}
+.btn-primary > * { position: relative; z-index: 1; }
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary:hover { transform: translateY(-1px); }
+
+.btn-ghost {
+  border: 1px solid currentColor; padding: 12px 29px;
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: 14px; letter-spacing: .03em;
+  transition: all .28s ease;
+}
+.btn-ghost:hover { opacity: .75; transform: translateY(-1px); }
+
+.card-hover { transition: transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s ease, border-color .4s ease; }
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 52px -16px rgba(10,28,59,.22), 0 4px 20px -6px rgba(30,91,214,.14);
+  border-color: #1E5BD6;
+}
+
+.fade-up { opacity: 0; transform: translateY(22px); transition: opacity .9s cubic-bezier(.25,.8,.25,1), transform .9s cubic-bezier(.25,.8,.25,1); }
+.fade-up.on { opacity: 1; transform: none; }
+
+.page { display: none; }
+.page.active { display: block; animation: fadein .45s cubic-bezier(.25,.8,.25,1); }
+@keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.marquee { display: flex; gap: 60px; animation: marq 50s linear infinite; white-space: nowrap; }
+@keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.tech-tag {
+  display: inline-block; font-family: "Inter", sans-serif;
+  font-size: 10px; letter-spacing: .12em; font-weight: 500;
+  padding: 3px 10px;
+  border: 1px solid rgba(30,91,214,.28);
+  color: #1E5BD6; background: rgba(30,91,214,.05);
+}
+
+.news-tag-badge {
+  display: inline-block; font-family: "Cormorant Garamond", serif;
+  font-size: 11px; letter-spacing: .16em;
+  padding: 2px 10px; min-width: 66px; text-align: center;
+  border: 1px solid #0A1C3B; color: #0A1C3B;
+}
+
+.deco-num {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: 88px; line-height: 1; color: rgba(10,28,59,.06);
+  position: absolute; top: -8px; right: 12px;
+  pointer-events: none; user-select: none;
+}

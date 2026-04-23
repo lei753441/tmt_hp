@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { LanguageProvider } from "./context/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -8,10 +9,6 @@ import Recruit from "./pages/Recruit";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
 
-/**
- * ハッシュベースのシンプルなルーター。
- * Next.js / React Router への移行を前提に、hash を読み替えるだけのラッパーにしている。
- */
 const useHashRoute = () => {
   const [hash, setHash] = useState(() =>
     typeof window !== "undefined" ? window.location.hash || "#/" : "#/"
@@ -39,10 +36,10 @@ export default function App() {
   }, [hash]);
 
   return (
-    <>
+    <LanguageProvider>
       <Header />
       <main>{page}</main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

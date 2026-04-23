@@ -1,34 +1,33 @@
 import { PageHead, SectionLabel, useFadeUp } from "../components/Shared";
-import { POSITIONS, BENEFITS } from "../data/content";
+import { useLang } from "../context/LanguageContext";
 
 export default function Recruit() {
   useFadeUp();
+  const { t, d } = useLang();
+  const positions = d("positions");
+  const benefits = d("benefits");
+
   return (
     <>
       <PageHead
         num="03"
         en="RECRUIT"
-        jp="採用情報"
-        lead="技術を追求し、お客様と伴走する仲間を募集しています。"
+        jp={t("recruit.pageJp")}
+        lead={t("recruit.pageLead")}
       />
       <section className="py-20 lg:py-28">
         <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
-          <SectionLabel num="01" en="MESSAGE" jp="私たちが求める人物像" />
+          <SectionLabel num="01" en="MESSAGE" jp={t("recruit.messageJp")} />
           <div className="fade-up text-[15px] leading-[2.1] text-gray-700 max-w-3xl">
-            <p className="mb-5">
-              東森テクノロジーでは、技術への好奇心と、お客様課題への責任感を併せ持つ仲間を歓迎します。
-            </p>
-            <p>
-              特定の技術に閉じず、クラウド・コンテナ・Microsoft 製品群を横断的に学び続けられる方と、
-              長く一緒に歩んでいきたいと考えています。
-            </p>
+            <p className="mb-5">{t("recruit.messageP1")}</p>
+            <p>{t("recruit.messageP2")}</p>
           </div>
 
           <div className="mt-16">
-            <SectionLabel num="02" en="POSITION" jp="募集職種" />
+            <SectionLabel num="02" en="POSITION" jp={t("recruit.positionJp")} />
             <div className="grid md:grid-cols-2 gap-6">
-              {POSITIONS.map((p, i) => (
-                <div key={p.title} className="fade-up card-hover border border-line p-8 bg-white">
+              {positions.map((p, i) => (
+                <div key={i} className="fade-up card-hover border border-line p-8 bg-white">
                   <span className="en text-[11px] tracking-widest2 text-accent mono-num">{`0${i + 1}`}</span>
                   <h3 className="mt-3 text-xl font-bold text-ink">{p.title}</h3>
                   <p className="mt-3 text-[14px] text-gray-600 leading-[2]">{p.desc}</p>
@@ -45,10 +44,10 @@ export default function Recruit() {
           </div>
 
           <div className="mt-16">
-            <SectionLabel num="03" en="BENEFITS" jp="働く環境" />
+            <SectionLabel num="03" en="BENEFITS" jp={t("recruit.benefitsJp")} />
             <div className="grid md:grid-cols-3 gap-6">
-              {BENEFITS.map((b, i) => (
-                <div key={b.title} className="fade-up border-t-2 border-accent bg-paper p-8">
+              {benefits.map((b, i) => (
+                <div key={i} className="fade-up border-t-2 border-accent bg-paper p-8">
                   <span className="en text-[11px] tracking-widest2 text-accent mono-num">{`0${i + 1}`}</span>
                   <h4 className="mt-3 text-lg font-bold text-ink">{b.title}</h4>
                   <p className="mt-3 text-[13px] text-gray-600 leading-[2]">{b.desc}</p>

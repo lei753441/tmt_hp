@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import { useLang } from "../context/LanguageContext";
 
 const FooterCol = ({ title, items }) => (
   <div>
@@ -16,40 +17,45 @@ const FooterCol = ({ title, items }) => (
 );
 
 export default function Footer() {
+  const { t } = useLang();
+  const tagline = t("footer.tagline").split("\n");
+  const navigate = t("footer.navigate");
+  const serviceLinks = t("footer.serviceLinks");
+  const contactLinks = t("footer.contactLinks");
+
   return (
     <footer className="bg-ink text-white">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 grid lg:grid-cols-[1.3fr_1fr_1fr_1fr] gap-10">
         <div>
           <Logo light />
           <p className="mt-6 text-sm leading-7 text-white/70">
-            クラウドネイティブな設計思想で、
-            <br />
-            企業の情報基盤と DX をかたちにする。
+            {tagline[0]}
+            {tagline[1] && <><br />{tagline[1]}</>}
           </p>
           <p className="mt-6 text-xs text-white/50 en tracking-widest2">SHIMBASHI · TOKYO</p>
         </div>
         <FooterCol
           title="NAVIGATE"
           items={[
-            ["トップ", "#/"],
-            ["会社概要", "#/company"],
-            ["事業内容", "#/service"],
+            [navigate[0], "#/"],
+            [navigate[1], "#/company"],
+            [navigate[2], "#/service"],
           ]}
         />
         <FooterCol
           title="SERVICE"
           items={[
-            ["クラウドネイティブ", "#/service"],
-            ["コンテナ基盤", "#/service"],
-            ["Microsoft ソリューション", "#/service"],
-            ["オンプレミス運用", "#/service"],
+            [serviceLinks[0], "#/service"],
+            [serviceLinks[1], "#/service"],
+            [serviceLinks[2], "#/service"],
+            [serviceLinks[3], "#/service"],
           ]}
         />
         <FooterCol
           title="CONTACT"
           items={[
-            ["お問い合わせ", "#/contact"],
-            ["採用情報", "#/recruit"],
+            [contactLinks[0], "#/contact"],
+            [contactLinks[1], "#/recruit"],
           ]}
         />
       </div>

@@ -1,21 +1,24 @@
 import { PageHead, useFadeUp } from "../components/Shared";
-import { SERVICES_DETAIL } from "../data/content";
+import { useLang } from "../context/LanguageContext";
 
 export default function Service() {
   useFadeUp();
+  const { t, d } = useLang();
+  const services = d("services");
+
   return (
     <>
       <PageHead
         num="02"
         en="SERVICE"
-        jp="事業内容"
-        lead="クラウドネイティブ設計から運用保守まで。東森テクノロジーの提供領域です。"
+        jp={t("service.pageJp")}
+        lead={t("service.pageLead")}
       />
       <section className="py-20 lg:py-28">
         <div className="max-w-[1100px] mx-auto px-6 lg:px-10 space-y-20">
-          {SERVICES_DETAIL.map((s, i) => (
+          {services.map((s, i) => (
             <article
-              key={s.title}
+              key={i}
               className={`fade-up grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start ${
                 i % 2 ? "lg:[&>*:first-child]:order-2" : ""
               }`}
@@ -35,10 +38,10 @@ export default function Service() {
                 <p className="mb-6">{s.long}</p>
                 <p className="en text-[11px] tracking-widest2 text-accent mb-3">TECHNOLOGY / KEYWORDS</p>
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-[14px]">
-                  {s.tags.map((t) => (
-                    <li key={t} className="flex items-center gap-3 text-ink">
+                  {s.tags.map((tag) => (
+                    <li key={tag} className="flex items-center gap-3 text-ink">
                       <span className="w-1 h-1 bg-accent" />
-                      {t}
+                      {tag}
                     </li>
                   ))}
                 </ul>
